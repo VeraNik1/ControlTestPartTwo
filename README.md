@@ -191,6 +191,7 @@ sudo dpkg -r mysql-apt-config
 Для решения задания используем инструмент __*draw io*__
 
 ![Diagram Animals](AnimalsDiagram.png)
+
 [Ссылка на файл](https://drive.google.com/file/d/1U67GqFlW6QRq0-y3fOfVWqHAFJaIEKkV/view?usp=sharing)
 
 ### Часть 3. Работа с MySQL
@@ -683,12 +684,13 @@ LEFT JOIN animals an ON an.Id = ha.Class_id;
 import java.util.ArrayList;
 
 public abstract class Animal {
+
+    private int id;
     private String name;
     private String birthday;
     private ArrayList<String> commands;
 
-    public Animal(String name, String birthday, 
-    ArrayList<String> commands) {
+    public Animal(String name, String birthday, ArrayList<String> commands) {
         this.name = name;
         this.birthday = birthday;
         this.commands = commands;
@@ -718,6 +720,12 @@ public abstract class Animal {
         this.commands = commands;
     }
 
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -725,6 +733,12 @@ public abstract class Animal {
         } else if (this.getClass() != obj.getClass()) {
             return false;
         } else return this.getName().equals(((Animal) obj).getName());
+    }
+    @Override
+    public String toString() {
+        return "id: " + this.getId() + " " + "имя: " + this.getName()
+                + " " + "дата рождения: " + this.getBirthday()+ " "
+                + "команды: " + this.getCommands().toString();
     }
 }
 ```
@@ -835,7 +849,7 @@ public class Donkey extends PackAnimal{
 15. Создайте класс Счетчик, у которого есть метод add(), увеличивающий̆ значение внутренней̆ int переменной̆ на 1 при нажатие “Завести новое животное” Сделайте так, чтобы с объектом такого типа можно было работать в блоке try-with-resources. Нужно бросить исключение, если работа с объектом типа счетчик была не в ресурсном try и/или ресурс остался открыт. Значение
 считать в ресурсе try, если при заведения животного заполнены все поля. (О господи, что вы курите?!!)
 
-__*[Решение заданий часть 14 и 15 по ссылке](https://github.com/VeraNik1/ControlTestPartTwo/tree/master/AnimalRegistry)*__
+__*[Решение заданий часть 13, 14 и 15 по ссылке](https://github.com/VeraNik1/ControlTestPartTwo/tree/master/AnimalRegistry)*__
 
 Примеры работы приложения:
 
