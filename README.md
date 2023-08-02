@@ -192,7 +192,7 @@ sudo dpkg -r mysql-apt-config
 
 ![Diagram Animals](AnimalsDiagram.png)
 
-[Ссылка на файл](https://drive.google.com/file/d/1U67GqFlW6QRq0-y3fOfVWqHAFJaIEKkV/view?usp=sharing)
+[Ссылка на файл](https://app.diagrams.net/#G1U67GqFlW6QRq0-y3fOfVWqHAFJaIEKkV)
 
 ### Часть 3. Работа с MySQL
 7. В подключенном MySQL репозитории создать базу данных “Друзья
